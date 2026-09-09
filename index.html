@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System - Portal Gateway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="index.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <!-- Main Content Gateway -->
+  <main class="app-main-content" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height: calc(100vh - 120px);">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <h1 style="font-size: 30px; font-weight: 700; margin-bottom: 8px;">Welcome to the Library Management System..!</h1>
+      <p style="color: #666; font-size: 15px;">Please select your designated portal to continue</p>
+    </div>
+
+    <div class="portal-select-container">
+      <!-- member card -->
+      <a href="member-login.html" class="portal-card">
+        <div class="portal-card-btn">Enter As Member</div>
+        <div class="portal-card-img">
+          <img src="images/member.svg" alt="Member Portal" style="max-height: 150px; width: auto;">
+        </div>
+        <p style="margin-top: 14px; font-size: 13.5px; color: #555; text-align: center;">Access student dashboard, catalog, bookmarks & return countdowns</p>
+      </a>
+
+      <!-- admin card -->
+      <a href="admin-login.html" class="portal-card">
+        <div class="portal-card-btn">Enter As Admin</div>
+        <div class="portal-card-img">
+          <img src="images/admin.svg" alt="Admin Portal" style="max-height: 150px; width: auto;">
+        </div>
+        <p style="margin-top: 14px; font-size: 13.5px; color: #555; text-align: center;">Manage book stock, member approvals, issue & return circulation desks</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="wireframe-footer">
+    &copy; 2026 Library Management System. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
+
