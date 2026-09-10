@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - Library Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="member-dashboard.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <!-- App Layout -->
+  <div class="app-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="app-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="member-dashboard.html" class="active">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="member-search.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            Search books
+          </a>
+        </li>
+        <li>
+          <a href="member-bookmarks.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+            Bookmarks
+          </a>
+        </li>
+        <li>
+          <a href="member-borrowed.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            Borrowed books
+          </a>
+        </li>
+        <li>
+          <a href="member-profile.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            Your details
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="member-login.html" class="btn-signout">Sign Out</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main-content">
+      
+      <!-- Top Row: Welcome + Search + Profile Card -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 28px;">
+        <div style="flex: 1; min-width: 280px;">
+          <h1 class="page-title" style="margin-bottom: 12px;">Welcome Damith thakshila</h1>
+          
+          <div class="search-input-box">
+            <span class="search-icon-inside">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" id="catalogSearchInput" placeholder="Search books by title, category or author....">
+          </div>
+        </div>
+
+        <!-- Student Profile Badge Card (Matching wireframe) -->
+        <div class="profile-badge-card">
+          <div class="profile-avatar-box">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="#9ca3af"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <div class="profile-info">
+            <h4>Damith thakshila</h4>
+            <p>Reg No: ITT/2024/033</p>
+            <p>Library ID: 2222</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column Layout: Alerts (Left) vs Catalog (Right) -->
+      <div style="display: flex; gap: 30px; flex-wrap: wrap; margin-bottom: 36px;">
+        
+        <!-- Important Alerts (Left Column) -->
+        <div style="flex: 0.8; min-width: 280px;">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Important alerts</h3>
+          <div class="alerts-col">
+            <div class="alert-card" style="border-left: 5px solid #d97706;">
+              <div class="alert-due-date">Due date : Oct-20</div>
+              <div class="alert-book-title">Introduction to Algorithms (CLRS)</div>
+              <div class="alert-days-left">4 days left to return</div>
+            </div>
+
+            <div class="alert-card" style="border-left: 5px solid #d97706;">
+              <div class="alert-due-date">Due date : Oct-24</div>
+              <div class="alert-book-title">Database System Concepts</div>
+              <div class="alert-days-left">8 days left to return</div>
+            </div>
+
+            <div class="alert-card" style="border-left: 5px solid #16a34a;">
+              <div class="alert-due-date">Reservation Ready!</div>
+              <div class="alert-book-title">Clean Code (Robert C. Martin)</div>
+              <div class="alert-days-left" style="color: #16a34a;">Hold at circulation counter desk</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Library Catalog Preview (Right Column) -->
+        <div style="flex: 2; min-width: 320px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3 style="font-size: 18px; font-weight: 700;">Library catalog</h3>
+            <a href="member-search.html" style="font-size: 13.5px; font-weight: 700; color: #0284c7; text-decoration: none;">View All Books &rarr;</a>
+          </div>
+
+          <div class="book-catalog-grid">
+            <!-- Book 1 -->
+            <div class="book-card">
+              <div class="book-cover-placeholder">
+                <span style="font-size: 13px; font-weight: 600;">Programming</span>
+              </div>
+              <div class="book-details-box">
+                <div>
+                  <div class="book-title">Clean Code</div>
+                  <div class="book-author">Robert C. Martin</div>
+                  <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-inactive">★</span>
+                    <span class="star-rating-count">(4.8)</span>
+                  </div>
+                </div>
+                <div class="book-card-bottom">
+                  <a href="book-detail.html?id=1" style="font-size: 12px; font-weight: 700; color: #0284c7; text-decoration: none;">Details</a>
+                  <div class="book-card-actions">
+                    <a href="https://drive.google.com" target="_blank" class="btn-read-online" title="Read Soft Copy Online (Google Drive)">📖 Read</a>
+                    <button class="btn-bookmark" title="Bookmark this book">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book-card">
+              <div class="book-cover-placeholder">
+                <span style="font-size: 13px; font-weight: 600;">Algorithms</span>
+              </div>
+              <div class="book-details-box">
+                <div>
+                  <div class="book-title">Introduction to Algorithms</div>
+                  <div class="book-author">Thomas H. Cormen</div>
+                  <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    <span class="star-rating-count">(5.0)</span>
+                  </div>
+                </div>
+                <div class="book-card-bottom">
+                  <a href="book-detail.html?id=2" style="font-size: 12px; font-weight: 700; color: #0284c7; text-decoration: none;">Details</a>
+                  <div class="book-card-actions">
+                    <a href="https://drive.google.com" target="_blank" class="btn-read-online" title="Read Soft Copy Online (Google Drive)">📖 Read</a>
+                    <button class="btn-bookmark bookmarked" title="Bookmark this book">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="#000000" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book-card">
+              <div class="book-cover-placeholder">
+                <span style="font-size: 13px; font-weight: 600;">Architecture</span>
+              </div>
+              <div class="book-details-box">
+                <div>
+                  <div class="book-title">Design Patterns (GoF)</div>
+                  <div class="book-author">Erich Gamma et al.</div>
+                  <div class="star-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-inactive">★</span>
+                    <span class="star-rating-count">(4.6)</span>
+                  </div>
+                </div>
+                <div class="book-card-bottom">
+                  <a href="book-detail.html?id=3" style="font-size: 12px; font-weight: 700; color: #0284c7; text-decoration: none;">Details</a>
+                  <button class="btn-bookmark" title="Bookmark this book">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NEW FEATURE: Visual Analytics / Student Reading Trends (Chart.js) -->
+      <div style="border: 1.5px solid #000000; border-radius: 12px; padding: 22px; background-color: #ffffff; margin-top: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <div>
+            <h3 style="font-size: 17px; font-weight: 700; color: #111;">📊 Reading Activity & Habits Analytics</h3>
+            <p style="font-size: 13px; color: #666;">Track your semester reading milestones and library returns</p>
+          </div>
+          <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700;">Year 2026</span>
+        </div>
+        <div style="position: relative; height: 240px; width: 100%;">
+          <canvas id="studentReadingChart"></canvas>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
+
