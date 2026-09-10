@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookmarks - Library Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="member-dashboard.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="member-dashboard.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="member-search.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            Search books
+          </a>
+        </li>
+        <li>
+          <a href="member-bookmarks.html" class="active">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+            Bookmarks
+          </a>
+        </li>
+        <li>
+          <a href="member-borrowed.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            Borrowed books
+          </a>
+        </li>
+        <li>
+          <a href="member-profile.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            Your details
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="member-login.html" class="btn-signout">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="app-main-content">
+      <h1 class="page-title">Saved Bookmarks</h1>
+      <p style="color: #666; margin-bottom: 24px;">Books you have pinned for upcoming assignments, exams, and future checkouts.</p>
+
+      <div class="book-catalog-grid">
+        <div class="book-card">
+          <div class="book-cover-placeholder"><span>Algorithms</span></div>
+          <div class="book-details-box">
+            <div>
+              <div class="book-title">Introduction to Algorithms</div>
+              <div class="book-author">Thomas H. Cormen</div>
+              <div class="star-rating"><span>★★★★★</span> <span class="star-rating-count">(5.0)</span></div>
+            </div>
+            <div class="book-card-bottom">
+              <a href="book-detail.html?id=2" class="btn-table">View Details</a>
+              <button class="btn-bookmark bookmarked" title="Remove Bookmark">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#000000" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover-placeholder"><span>Architecture</span></div>
+          <div class="book-details-box">
+            <div>
+              <div class="book-title">Design Patterns (GoF)</div>
+              <div class="book-author">Erich Gamma et al.</div>
+              <div class="star-rating"><span>★★★★☆</span> <span class="star-rating-count">(4.6)</span></div>
+            </div>
+            <div class="book-card-bottom">
+              <a href="book-detail.html?id=3" class="btn-table">View Details</a>
+              <button class="btn-bookmark bookmarked" title="Remove Bookmark">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#000000" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
