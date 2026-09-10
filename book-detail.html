@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details & Soft Copy - Library Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="member-dashboard.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="member-dashboard.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="member-search.html" class="active">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            Search books
+          </a>
+        </li>
+        <li>
+          <a href="member-bookmarks.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+            Bookmarks
+          </a>
+        </li>
+        <li>
+          <a href="member-borrowed.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            Borrowed books
+          </a>
+        </li>
+        <li>
+          <a href="member-profile.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            Your details
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="member-search.html" class="btn-signout" style="background:#555;">&larr; Back to Catalog</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main-content">
+      
+      <!-- Book Header Card -->
+      <div class="form-card" style="max-width: 100%; margin-bottom: 28px; display: flex; gap: 30px; flex-wrap: wrap;">
+        <div style="width: 180px; height: 240px; background: #f1f5f9; border: 1.5px solid #000; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #475569;">
+          Book Cover
+        </div>
+        <div style="flex: 1; min-width: 260px;">
+          <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700;">Software Engineering</span>
+          <h1 style="font-size: 24px; font-weight: 700; margin: 8px 0 4px 0;">Clean Code: A Handbook of Agile Software Craftsmanship</h1>
+          <p style="font-size: 14px; color: #555; margin-bottom: 12px;">By <strong>Robert C. Martin ("Uncle Bob")</strong> &bull; ISBN: 978-0132350884</p>
+          
+          <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 16px;">
+            <div class="star-rating" style="font-size: 18px;">
+              <span>★★★★★</span> <strong style="color: #111; font-size: 15px; margin-left: 6px;">4.8</strong>
+              <span class="star-rating-count">(24 student ratings)</span>
+            </div>
+            <span style="font-size: 13px; font-weight: 600; color: #16a34a;">● 5 Physical Copies Available</span>
+          </div>
+
+          <p style="font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 20px;">
+            Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way.
+          </p>
+
+          <!-- Soft Copy Google Drive Read-Only Link (Optional Feature) -->
+          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;">
+            <a href="https://drive.google.com" target="_blank" class="btn-soft-copy">
+              <span>📖 Read Soft Copy (Google Drive)</span>
+            </a>
+            <button class="btn-table btn-bookmark" style="padding: 10px 18px; display: inline-flex; align-items: center; gap: 8px;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              <span>Bookmark Book</span>
+            </button>
+          </div>
+          <p style="font-size: 12px; color: #64748b; font-style: italic;">
+            * Soft copies are optional and provided via authorized read-only links when digital access is available. Physical copies are accessible in the university library.
+          </p>
+        </div>
+      </div>
+
+      <!-- Student Reviews & Ratings Section -->
+      <div style="border: 1.5px solid #000; border-radius: 12px; padding: 24px; background: #ffffff;">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Student Reviews & Academic Feedback</h3>
+        
+        <!-- Submit a Review Form -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 8px;">Write a Review for your Peers</h4>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 13px;">Your Rating:</span>
+            <div class="star-rating" style="cursor: pointer; font-size: 18px;">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+          <textarea class="form-control" rows="3" placeholder="Share how this book helped you, key takeaways or your review..." style="margin-bottom: 10px;"></textarea>
+          <button class="btn-table" onclick="alert('Thank you! Your review has been submitted.');" style="background:#000; color:#fff; padding:8px 16px;">Post Review</button>
+        </div>
+
+        <!-- Reviews List -->
+        <div class="reviews-list">
+          <div class="review-item">
+            <div class="review-header">
+              <span class="review-author">Damith Thakshila (ITT/2024/033)</span>
+              <span class="review-date">September 02, 2026</span>
+            </div>
+            <div class="star-rating" style="margin-bottom: 4px;"><span>★★★★★</span></div>
+            <p class="review-text">Must-read for Year 1 Software Development! Chapter 3 on functions completely changed how I organize my code.</p>
+          </div>
+
+          <div class="review-item">
+            <div class="review-header">
+              <span class="review-author">Kavindu Nimsara (ITT/2024/018)</span>
+              <span class="review-date">August 28, 2026</span>
+            </div>
+            <div class="star-rating" style="margin-bottom: 4px;"><span>★★★★☆</span></div>
+            <p class="review-text">Extremely useful reference for OOP design patterns and clean variable naming.</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
