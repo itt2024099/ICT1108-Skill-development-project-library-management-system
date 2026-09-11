@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add or Remove Books - Library Administration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="admin-members.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="admin-members.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            View Members
+          </a>
+        </li>
+        <li>
+          <a href="admin-books.html" class="active">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="7" x2="12" y2="13"/><line x1="9" y1="10" x2="15" y2="10"/></svg></span>
+            Add/Remove Books
+          </a>
+        </li>
+        <li>
+          <a href="admin-borrowed-log.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+            Borrowed Books Log
+          </a>
+        </li>
+        <li>
+          <a href="admin-circulation-desk.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+            Process Returns/Issues
+          </a>
+        </li>
+        <li>
+          <a href="admin-approvals.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
+            Member Approval
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="admin-login.html" class="btn-signout">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="app-main-content">
+      <h1 class="page-title">Add or Remove books</h1>
+
+      <!-- Top Row: Add Form (Left) vs Inventory Stats (Right) -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 30px;">
+        
+        <!-- Add Book Form Card -->
+        <div style="flex: 2; min-width: 320px; border: 1.5px solid #000; border-radius: 12px; padding: 20px 24px; background: #fff;">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 14px; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px;">Add Physical & Soft Copies</h3>
+          
+          <form onsubmit="event.preventDefault(); alert('Book successfully added to inventory!');">
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <div class="form-group" style="flex: 1; min-width: 180px;">
+                <label class="form-label">Book title</label>
+                <input type="text" class="form-control" placeholder="Title of the book" required>
+              </div>
+              <div class="form-group" style="flex: 1; min-width: 180px;">
+                <label class="form-label">Author</label>
+                <input type="text" class="form-control" placeholder="Author name" required>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <div class="form-group" style="flex: 1; min-width: 180px;">
+                <label class="form-label">Book Id / ISBN</label>
+                <input type="text" class="form-control" placeholder="Unique accession / ISBN" required>
+              </div>
+              <div class="form-group" style="flex: 1; min-width: 180px;">
+                <label class="form-label">Stock Quantity</label>
+                <input type="number" class="form-control" value="10" min="1" required>
+              </div>
+            </div>
+
+            <!-- Book Cover Image Option (Upload or Image URL) -->
+            <div class="form-group">
+              <label class="form-label">Book Cover Page Photo / Image <span style="font-weight: normal; color: #64748b;">— Optional</span></label>
+              <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <input type="file" id="bookCoverUpload" class="form-control" accept="image/*" style="flex: 1; min-width: 180px;">
+                <span style="font-size: 13px; font-weight: bold; color: #666;">OR</span>
+                <input type="url" id="bookCoverUrl" class="form-control" placeholder="https://example.com/cover.jpg" style="flex: 1.2; min-width: 220px;">
+              </div>
+              <small style="color: #64748b; font-size: 11.5px;">Upload a book front cover image (JPG, PNG) or provide an image URL.</small>
+            </div>
+
+            <!-- Soft Copy Google Drive Link (Optional Feature) -->
+            <div class="form-group">
+              <label class="form-label">Add Soft Copy (Google Drive Link / PDF URL) <span style="font-weight: normal; color: #64748b;">— Optional</span></label>
+              <input type="url" class="form-control" placeholder="https://drive.google.com/file/d/... (leave blank if physical only)">
+            </div>
+
+            <button type="submit" class="btn-table" style="background:#000; color:#fff; padding: 10px 24px; font-size: 14px; float: right;">Add Book</button>
+          </form>
+        </div>
+
+        <!-- Inventory Stats Column (Matching wireframe) -->
+        <div style="flex: 0.8; min-width: 200px; display: flex; flex-direction: column; gap: 14px;">
+          <div class="stat-box">
+            <div class="stat-label">Total titles:</div>
+            <div class="stat-val">734</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Total copies:</div>
+            <div class="stat-val">22,345</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Available copies:</div>
+            <div class="stat-val">4,567</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Books Management Table -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h2 style="font-size: 18px; font-weight: 700;">Catalog Inventory List</h2>
+        <div class="search-input-box" style="max-width: 260px;">
+          <input type="text" id="tableSearchInput" placeholder="Search by name or Id...">
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="wireframe-table">
+          <thead>
+            <tr>
+              <th>Book details</th>
+              <th>Book Id</th>
+              <th>Total stock</th>
+              <th>Available</th>
+              <th>Format</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 40px; height: 50px; border: 1.5px solid #000; border-radius: 4px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">📖</div>
+                  <div>
+                    <div style="font-weight:700;">Clean Code</div>
+                    <div style="font-size:12px; color:#666;">Robert C. Martin</div>
+                  </div>
+                </div>
+              </td>
+              <td>123456</td>
+              <td>20</td>
+              <td>10</td>
+              <td><span class="badge-status status-approved" style="font-size:11px;">Physical + Soft Copy</span></td>
+              <td>
+                <button class="btn-table" onclick="alert('Edit book modal');">Edit</button>
+                <button class="btn-table btn-table-delete" onclick="if(confirm('Delete book?')) this.closest('tr').remove();">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 40px; height: 50px; border: 1.5px solid #000; border-radius: 4px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">📖</div>
+                  <div>
+                    <div style="font-weight:700;">Introduction to Algorithms</div>
+                    <div style="font-size:12px; color:#666;">Thomas H. Cormen</div>
+                  </div>
+                </div>
+              </td>
+              <td>123457</td>
+              <td>25</td>
+              <td>18</td>
+              <td><span class="badge-status status-approved" style="font-size:11px;">Physical + Soft Copy</span></td>
+              <td>
+                <button class="btn-table" onclick="alert('Edit book modal');">Edit</button>
+                <button class="btn-table btn-table-delete" onclick="if(confirm('Delete book?')) this.closest('tr').remove();">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 40px; height: 50px; border: 1.5px solid #000; border-radius: 4px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">📖</div>
+                  <div>
+                    <div style="font-weight:700;">Design Patterns</div>
+                    <div style="font-size:12px; color:#666;">Erich Gamma</div>
+                  </div>
+                </div>
+              </td>
+              <td>123458</td>
+              <td>15</td>
+              <td>0 (Waitlist)</td>
+              <td><span style="font-size:11px; color:#64748b;">Physical Only</span></td>
+              <td>
+                <button class="btn-table" onclick="alert('Edit book modal');">Edit</button>
+                <button class="btn-table btn-table-delete" onclick="if(confirm('Delete book?')) this.closest('tr').remove();">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
