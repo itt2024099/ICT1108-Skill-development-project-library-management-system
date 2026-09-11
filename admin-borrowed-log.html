@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrowed Books Log - Library Administration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <a href="admin-members.html" class="brand-logo">
+      <img src="images/logo.svg" alt="Library Management System" class="site-logo-svg">
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="admin-members.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            View Members
+          </a>
+        </li>
+        <li>
+          <a href="admin-books.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="7" x2="12" y2="13"/><line x1="9" y1="10" x2="15" y2="10"/></svg></span>
+            Add/Remove Books
+          </a>
+        </li>
+        <li>
+          <a href="admin-borrowed-log.html" class="active">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+            Borrowed Books Log
+          </a>
+        </li>
+        <li>
+          <a href="admin-circulation-desk.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+            Process Returns/Issues
+          </a>
+        </li>
+        <li>
+          <a href="admin-approvals.html">
+            <span class="sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
+            Member Approval
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="admin-login.html" class="btn-signout">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="app-main-content">
+      <h1 class="page-title">Borrowed Books Log</h1>
+
+      <!-- Stats Bar (Exact match to wireframe) -->
+      <div class="stat-cards-grid">
+        <div class="stat-box">
+          <div class="stat-label">Current Distributed Books:</div>
+          <div class="stat-val">734</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Overdue Books:</div>
+          <div class="stat-val red-val">52</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Returned Today:</div>
+          <div class="stat-val" style="color:var(--accent-green);">18</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h2 style="font-size: 18px; font-weight: 700;">Master Circulation Logs</h2>
+        <div class="search-input-box" style="max-width: 260px;">
+          <input type="text" id="tableSearchInput" placeholder="Filter circulation log...">
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="wireframe-table">
+          <thead>
+            <tr>
+              <th>L_ID</th>
+              <th>Book Title</th>
+              <th>Issue Date</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0010</td>
+              <td>Introduction to Algorithms</td>
+              <td>Oct 15, 2026</td>
+              <td>Oct 18, 2026</td>
+              <td><span class="badge-status status-active">Active</span></td>
+              <td><button class="btn-table" onclick="alert('Viewing circulation details for Transaction #0010');">View Log</button></td>
+            </tr>
+            <tr>
+              <td>0110</td>
+              <td>Design Patterns</td>
+              <td>Sep 01, 2026</td>
+              <td>Sep 14, 2026</td>
+              <td><span class="badge-status status-active">Active</span></td>
+              <td><button class="btn-table" onclick="alert('Viewing circulation details for Transaction #0110');">View Log</button></td>
+            </tr>
+            <tr>
+              <td>0145</td>
+              <td>Clean Code</td>
+              <td>Nov 01, 2026</td>
+              <td>Nov 15, 2026</td>
+              <td><span class="badge-status status-overdue">Overdue</span></td>
+              <td><button class="btn-table" onclick="alert('Notice issued to student.');">View Log</button></td>
+            </tr>
+            <tr>
+              <td>0200</td>
+              <td>The Pragmatic Programmer</td>
+              <td>Sep 16, 2026</td>
+              <td>Sep 19, 2026</td>
+              <td><span class="badge-status status-active">Active</span></td>
+              <td><button class="btn-table" onclick="alert('Viewing circulation details for Transaction #0200');">View Log</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
