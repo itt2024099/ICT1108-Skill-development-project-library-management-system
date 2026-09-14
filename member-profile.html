@@ -65,12 +65,18 @@
 
       <div class="form-card" style="max-width: 650px; margin: 0;">
         <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px;">
-          <div class="profile-avatar-box" style="width: 70px; height: 70px;">
-            <svg viewBox="0 0 24 24" width="45" height="45" fill="#9ca3af"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <div class="profile-avatar-box" style="width: 75px; height: 75px; position: relative; border-radius: 50%; overflow: hidden; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+            <svg id="defaultAvatarSvg" viewBox="0 0 24 24" width="45" height="45" fill="#9ca3af"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <img id="avatarImagePreview" src="" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; display: none;">
           </div>
           <div>
-            <h3 style="font-size: 18px; font-weight: 700;">Damith Thakshila</h3>
-            <p style="font-size: 13px; color: #666;">Status: <strong style="color: #16a34a;">Verified Member (Active)</strong></p>
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Damith Thakshila</h3>
+            <p style="font-size: 13px; color: #666; margin-bottom: 8px;">Status: <strong style="color: #16a34a;">Verified Member (Active)</strong></p>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #0284c7; background: #f0f9ff; border: 1px solid #bae6fd; padding: 5px 12px; border-radius: 4px; cursor: pointer;">
+              <input type="file" id="profilePicInput" accept="image/*" style="display: none;" onchange="previewAvatar(event)">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Upload Profile Photo
+            </label>
           </div>
         </div>
 
@@ -119,6 +125,22 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    function previewAvatar(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.getElementById('avatarImagePreview');
+          img.src = e.target.result;
+          img.style.display = 'block';
+          document.getElementById('defaultAvatarSvg').style.display = 'none';
+          alert('Profile photo selected! Click Save Profile Changes to apply.');
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
 </body>
 </html>
 
