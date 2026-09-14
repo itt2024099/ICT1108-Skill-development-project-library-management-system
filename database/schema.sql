@@ -1,4 +1,4 @@
-﻿-- ====================================================================
+-- ====================================================================
 -- Web-Based Library Management System
 -- Faculty of Technology, Rajarata University of Sri Lanka
 -- Course: ICT 1108 - Skill Development Project I
@@ -110,11 +110,11 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   FOREIGN KEY (`book_id`) REFERENCES `books`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Sample Seed Data
+-- Sample Seed Data (Passwords: admin123 for Admin, password123 for Student)
 INSERT INTO `users` (`id`, `role_id`, `reg_no`, `full_name`, `email`, `password_hash`, `department`, `status`) VALUES
-(1, 1, 'ADM/2026/001', 'Head Librarian', 'admin@tec.rjt.ac.lk', '$2y$10$e8K7b38t6O41s7w9r5F7u.n0Zt6yN9WdM0sD1g4p', 'Library Administration', 'Active'),
-(2, 3, 'ITT/2024/099', 'Dulaj Senarathna', 'itt2024099@tec.rjt.ac.lk', '$2y$10$e8K7b38t6O41s7w9r5F7u.n0Zt6yN9WdM0sD1g4p', 'Technology', 'Active')
-ON DUPLICATE KEY UPDATE `email` = VALUES(`email`);
+(1, 1, 'ADM/2026/001', 'Head Librarian', 'admin@tec.rjt.ac.lk', '$2y$10$zZyhRqnj9Lkj2L2HsBj2Keif/aqSKf95XTOvJI4kJ9UK57MgNvEiC', 'Library Administration', 'Active'),
+(2, 3, 'ITT/2024/099', 'Dulaj Senarathna', 'itt2024099@tec.rjt.ac.lk', '$2y$10$A41792CTXPHc8wvgP..Xv.xj/E/JzFQ8N8T5W5qTbwF2y0Y5fkEf6', 'Technology', 'Active')
+ON DUPLICATE KEY UPDATE `password_hash` = VALUES(`password_hash`);
 
 INSERT INTO `books` (`id`, `category_id`, `isbn`, `title`, `author`, `publisher`, `published_year`, `total_copies`, `available_copies`, `shelf_location`, `status`) VALUES
 (1, 1, '978-0132350884', 'Clean Code: A Handbook of Agile Software Craftsmanship', 'Robert C. Martin', 'Prentice Hall', 2008, 5, 3, 'Rack A-12', 'Available'),
