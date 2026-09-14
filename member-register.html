@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -44,23 +44,32 @@
         </div>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <div class="form-group" style="flex: 1; min-width: 160px;">
+          <div class="form-group" style="flex: 1; min-width: 180px;">
             <label class="form-label">Create Password</label>
             <input type="password" class="form-control" placeholder="Min 6 characters" required>
           </div>
-          <div class="form-group" style="flex: 1; min-width: 160px;">
+          <div class="form-group" style="flex: 1; min-width: 180px;">
             <label class="form-label">Confirm Password</label>
             <input type="password" class="form-control" placeholder="Re-type password" required>
           </div>
-          <div class="form-group" style="flex: 0.8; min-width: 140px;">
-            <label class="form-label">Profile Image</label>
-            <input type="file" class="form-control" accept="image/*">
+        </div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 180px;">
+            <label class="form-label">Student ID Card (Front Side)</label>
+            <input type="file" class="form-control" accept="image/*" required>
+            <small style="color: #64748b; font-size: 11.5px;">Upload photo showing Reg No and Student details</small>
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 180px;">
+            <label class="form-label">Student ID Card (Back Side)</label>
+            <input type="file" class="form-control" accept="image/*" required>
+            <small style="color: #64748b; font-size: 11.5px;">Upload photo showing barcode and validity period</small>
           </div>
         </div>
 
         <!-- Approval Banner matching wireframe -->
         <div class="form-info-banner">
-          <strong>Administration Approval Required:</strong> Once submitted, your registration request will be sent directly to the library administration team for verification. Your account will remain inactive until official approval is granted. Upon successful approval, your unique Library ID and account activation confirmation will be sent to your registered email address.
+          <strong>University Identity Verification Required:</strong> Please upload clear photos of your University Student ID (Front & Back). Your account request will be verified by the library administration team against university enrollment records before activation.
         </div>
 
         <button type="submit" class="btn-primary-block" style="margin-bottom: 16px;">Submit Registration for Approval</button>
