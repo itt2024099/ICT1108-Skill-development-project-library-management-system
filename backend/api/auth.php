@@ -1,9 +1,6 @@
 <?php
-// ==========================================
 // Authentication API Endpoint
-// Handles member login, credential checks, and sessions
-// ==========================================
-
+// handles member login, credentals and session
 header('Content-Type: application/json');
 require_once __DIR__ . '/../config/db.php';
 
@@ -22,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action === 'login') {
         exit();
     }
 
-    // 1. Query user from database by email
+    // 1. Querry user from databse by email
     $stmt = $pdo->prepare("SELECT u.*, r.role_name FROM users u JOIN roles r ON u.role_id = r.id WHERE u.email = ? LIMIT 1");
     $stmt->execute([$email]);
     $user = $stmt->fetch();

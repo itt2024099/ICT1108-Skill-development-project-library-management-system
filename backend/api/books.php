@@ -1,9 +1,6 @@
 <?php
-// ==========================================
 // Book Search & Catalog API Endpoint
-// Provides book filtering by title, author, or category
-// ==========================================
-
+// filter books by title, auther or category
 header('Content-Type: application/json');
 require_once __DIR__ . '/../config/db.php';
 

@@ -5,12 +5,12 @@
 
 ---
 
-## ðŸ“Œ Project Overview
+## Project Overview
 The **Web-Based Library Management System** is a modern, responsive web application designed to replace manual paper ledgers and inefficient circulation counter queues in academic libraries. Built with a modular two-portal architecture, it provides self-service capabilities for students while giving library staff centralized control over inventory, user registrations, and physical loans.
 
 ---
 
-## ðŸ‘¥ Project Team & Work Distribution
+## Project Team & Work Distribution
 
 | Member | Registration No | GitHub Account | Assigned Module & Contributions |
 | :--- | :--- | :--- | :--- |
@@ -22,7 +22,7 @@ The **Web-Based Library Management System** is a modern, responsive web applicat
 
 ---
 
-## ðŸ›ï¸ System Architecture & Portals
+## System Architecture & Portals
 
 ### 1. Student Member Portal
 * **Gateway & Registration**: Online student onboarding with an administrative verification hold (`member-register.html`, `member-login.html`).
@@ -41,7 +41,7 @@ The **Web-Based Library Management System** is a modern, responsive web applicat
 
 ---
 
-## âš™ï¸ Installation & Local Setup
+## Installation & Local Setup
 
 ### Prerequisites
 * Web Server (Apache via **XAMPP**, **WAMP**, or **LAMP**)

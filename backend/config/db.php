@@ -1,9 +1,6 @@
 <?php
-// ==========================================
-// Database Connection Configuration
-// Simple and standard PDO database connection
-// ==========================================
-
+// Databse connection config
+// standard PDO database conection
 $host = "localhost";
 $user = "root";
 $pass = "";

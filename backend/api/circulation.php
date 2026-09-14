@@ -1,9 +1,6 @@
 <?php
-// ==========================================
 // Circulation API: Issue & Return Transactions
 // ICT 1108 - Skill Development Project I
-// ==========================================
-
 header('Content-Type: application/json');
 require_once __DIR__ . '/../config/db.php';
 
@@ -57,7 +54,7 @@ if ($action === 'return' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $record = $stmt->fetch();
 
     if ($record) {
-        // Calculate overdue fine (Rs. 10.00 per overdue day)
+        // calculate overdue fine (Rs 10 per day)
         $due_timestamp = strtotime($record['due_date']);
         $current_timestamp = time();
         $fine = 0.00;

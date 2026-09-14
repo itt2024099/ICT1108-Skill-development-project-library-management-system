@@ -1,8 +1,5 @@
-// ========================================================
 // Main Client-Side JavaScript
-// Handles responsive sidebar toggle and bookmark interactions
-// ========================================================
-
+// handles responsive sidebar togle and bookmark click
 document.addEventListener('DOMContentLoaded', function () {
     
     // 1. Mobile Sidebar Toggle

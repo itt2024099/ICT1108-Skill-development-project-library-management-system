@@ -1,10 +1,7 @@
--- ====================================================================
 -- Web-Based Library Management System
 -- Faculty of Technology, Rajarata University of Sri Lanka
 -- Course: ICT 1108 - Skill Development Project I
 -- Database Schema: library_db (MySQL / MariaDB)
--- ====================================================================
-
 CREATE DATABASE IF NOT EXISTS `library_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `library_db`;
 
